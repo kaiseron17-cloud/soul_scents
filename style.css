@@ -1,0 +1,179 @@
+/* ================================
+   SOUL SCENTS — DESIGN POLISH
+   ================================ */
+
+/* Soft overall background */
+body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(31, 59, 90, 0.06),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(31, 59, 90, 0.05),
+      transparent 25%
+    ),
+    #ffffff;
+}
+
+/* Glass effect for navbar */
+.glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Card hover effect */
+.card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -20px rgba(15, 23, 42, 0.28);
+  border-color: rgba(31, 59, 90, 0.25);
+}
+
+/* Hero background glow */
+.hero-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(31, 59, 90, 0.08);
+  filter: blur(50px);
+  top: -80px;
+  right: 10%;
+  pointer-events: none;
+}
+
+/* Section labels */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background: var(--brand-soft);
+  color: var(--brand);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #1f3b5a,
+    #416b91
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* Hero image */
+.image-frame {
+  box-shadow:
+    0 30px 70px -35px rgba(15, 23, 42, 0.45);
+}
+
+/* Floating badge animation */
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better buttons */
+a,
+button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+a:hover,
+button:hover {
+  opacity: 0.92;
+}
+
+/* Better focus states for form inputs */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(31, 59, 90, 0.12);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-glow::before {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    right: -40px;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float {
+    animation: none;
+  }
+
+  .card,
+  a,
+  button {
+    transition: none;
+  }
+}
