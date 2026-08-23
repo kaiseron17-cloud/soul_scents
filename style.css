@@ -3,7 +3,7 @@
     .shadow-soft{box-shadow:0 10px 25px -10px rgba(2,6,23,.15)}
     .grad{background:linear-gradient(180deg,#ffffff 0%,#f7fafc 100%)}
 
-    /* --- Soul Scents visual polish --- */
+   
     body {
       background:
         radial-gradient(circle at 10% 10%, rgba(31,59,90,.06), transparent 28%),
